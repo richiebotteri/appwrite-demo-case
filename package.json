@@ -1,0 +1,19 @@
+{
+   "name": "watchthis-appwrite-demo",
+   "version": "1.0.0",
+   "description": "Appwrite is a self-hosted open-source BaaS platform that provides developers with all the core APIs required to build any application. In this project we will create a movie database that will demonstrate how Appwrite can be used in practice with vanilla javascript.",
+   "main": "index.js",
+   "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
+   },
+   "keywords": [],
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "bootstrap": "^5.2.3",
+      "sass": "^1.62.0",
+      "vite": "^4.2.2"
+   }
+}
