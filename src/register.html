@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <script type="module" src="./js/main.js"></script>
+      <title>Guest Page</title>
+   </head>
+   <body>
+      <header class="bg-light">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg">
+               <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Appwrite Auth</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                           <a class="nav-link" aria-current="page" href="index.html">Login</a>
+                        </li>
+                        <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="register.html">Register</a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <main>
+         <div class="container pt-3">
+            <form id="register-form" class="card mt-4">
+               <div class="card-header">
+                  <h2>Register</h2>
+               </div>
+               <div class="card-body">
+                  <div class="mb-3">
+                     <label for="name" class="form-label">Name</label>
+                     <input type="name" class="form-control" id="name" name="name" placeholder="write your name" maxlength="128" required />
+                  </div>
+                  <div class="mb-3">
+                     <label for="email" class="form-label">Email address</label>
+                     <input type="email" class="form-control" id="email" name="email" placeholder="write your email" required />
+                  </div>
+                  <div class="mb-4">
+                     <label for="password" class="form-label">Password</label>
+                     <input type="password" class="form-control" id="password" name="password" placeholder="write your password" minlength="8" required />
+                  </div>
+                  <button type="submit" class="btn btn-primary">Register</button>
+               </div>
+            </form>
+         </div>
+      </main>
+   </body>
+</html>
