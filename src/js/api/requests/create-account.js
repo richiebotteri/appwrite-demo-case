@@ -1,16 +1,13 @@
-import { CREATE_ACCOUNT_URL, PROJECT_ID } from "./env.mjs";
+import { Account } from "appwrite";
+import { initiateClient } from "../initiate-client";
+import { displayErrorMessage } from "../display-error-message";
 
-export async function CreateAccount(formData) {
-   const response = await fetch(CREATE_ACCOUNT_URL, {
-      method: "post",
-      headers: {
-         "Content-Type": "application/json",
-         "X-Appwrite-Response-Format": "1.0.0",
-         "X-Appwrite-Project": PROJECT_ID,
-      },
-      body: JSON.stringify(formData),
-   });
-   const result = await response.json();
-   console.log(response);
-   console.log(result);
+export async function createAccount({ userId, email, password, name }) {
+   try {
+      const client = initiateClient();
+      const account = new Account(client);
+      const promise = await account.create(userId, email, password, name);
+   } catch (error) {
+      displayErrorMessage(error);
+   }
 }

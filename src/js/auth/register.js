@@ -1,4 +1,5 @@
-import { generateId } from "./generate-id";
+import { createAccount } from "../api/requests/create-account";
+import { generateId } from "../utility/generate-id";
 
 export function register() {
    const registerFormEl = document.querySelector("#register-form");
@@ -12,5 +13,6 @@ export function register() {
          value: id,
          enumerable: true,
       });
+      createAccount(formDataObj);
    });
 }
