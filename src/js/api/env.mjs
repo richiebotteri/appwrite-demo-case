@@ -1,12 +1,14 @@
 // Setting up API environment variables
 
-export const HOST_URL = "http://127.0.0.1:80";
+export const PROJECT_ID = "643fd636d5b12f836b45";
 
-export const PROJECT_ID = "6425c669a2eabc2b81c0";
+export const HOST_URL = "http://127.0.0.1:80";
 
 export const API_VERSION = "/v1";
 
-export const BASE_PATH = `${API_VERSION}/account`;
+export const ACCOUNT_ROUTE = "/account";
+
+export const BASE_PATH = `${API_VERSION}${ACCOUNT_ROUTE}`;
 
 export const CREATE_ACCOUNT_URL = `${HOST_URL}${BASE_PATH}`;
 
