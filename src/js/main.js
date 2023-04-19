@@ -7,8 +7,9 @@ import { register } from "./auth/register";
 const pathname = location.pathname;
 switch (pathname) {
    case "/":
+      location.pathname = "/index.html";
+   case "/index.html":
       login();
-      console.log("hey");
       break;
    case "/register.html":
       register();
