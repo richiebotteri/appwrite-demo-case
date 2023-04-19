@@ -1,3 +1,7 @@
 export default function (string, value) {
-   return localStorage.setItem(string, value);
+   if (typeof value === "object") {
+      localStorage.setItem(string, JSON.stringify(value));
+   } else {
+      localStorage.setItem(string, value);
+   }
 }
