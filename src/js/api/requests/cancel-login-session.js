@@ -1,7 +1,8 @@
 import { Account } from "appwrite";
 import { initiateClient } from "../initiate-client";
-import load from "../../storage/load";
 import { displayInfoMessage } from "../validation/display-info-message";
+import remove from "../../storage/remove";
+import load from "../../storage/load";
 
 export function cancelLoginSession() {
    try {
@@ -10,6 +11,8 @@ export function cancelLoginSession() {
       const sessionObject = load("sessionObject");
       const { $id } = sessionObject;
       const response = account.deleteSession($id);
+      remove("sessionObject");
+      remove("token");
       displayInfoMessage("Logging out now!");
       setTimeout(() => {
          location.pathname = "/index.html";
