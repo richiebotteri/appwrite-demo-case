@@ -1,6 +1,6 @@
 import { Account } from "appwrite";
 import { initiateClient } from "../initiate-client";
-import { displayErrorMessage } from "../display-error-message";
+import { displayErrorMessage } from "../validation/display-error-message";
 import { createJwt } from "./create-jwt";
 import save from "../../storage/save";
 
@@ -15,7 +15,7 @@ export async function createLoginSession({ email, password }) {
       save("sessionObject", sessionObject);
       createJwt(account);
       setTimeout(() => {
-         location.pathname = "/movie-collection.html";
+         location.pathname = "/movie-collections.html";
       }, 1000);
    } catch (error) {
       displayErrorMessage(error);
