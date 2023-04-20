@@ -14,6 +14,9 @@ export async function createLoginSession({ email, password }) {
       const sessionObject = await account.createEmailSession(email, password);
       save("sessionObject", sessionObject);
       createJwt(account);
+      setTimeout(() => {
+         location.pathname = "/movie-collection.html";
+      }, 1000);
    } catch (error) {
       displayErrorMessage(error);
    }
