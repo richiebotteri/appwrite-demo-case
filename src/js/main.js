@@ -5,6 +5,8 @@ import { login } from "./auth/login";
 import { register } from "./auth/register";
 import { logout } from "./auth/logout";
 import { displayProfileData } from "./ui/profile/display-profile-data";
+import { redirect } from "./api/redirect";
+
 const pathname = location.pathname;
 switch (pathname) {
    case "/":
@@ -16,9 +18,11 @@ switch (pathname) {
       register();
       break;
    case "/movie-collections.html":
+      redirect();
       logout();
       break;
    case "/profile.html":
+      redirect();
       displayProfileData();
       logout();
       break;
