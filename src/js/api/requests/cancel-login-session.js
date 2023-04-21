@@ -1,19 +1,18 @@
-import { Account } from "appwrite";
 import { initiateClient } from "../initiate-client";
 import { displayInfoMessage } from "../validation/display-info-message";
 import remove from "../../storage/remove";
 import load from "../../storage/load";
+import { initiateAccount } from "../initiate-account";
 
-export function cancelLoginSession() {
+export async function cancelLoginSession() {
    try {
       const client = initiateClient();
-      const account = new Account(client);
-      const sessionObject = load("sessionObject");
-      const { $id } = sessionObject;
-      const response = account.deleteSession($id);
-      remove("sessionObject");
+      const account = initiateAccount(client);
+      const sessionID = load("sessionID");
+      const response = await account.deleteSession(sessionID);
+      remove("activeAccountObj");
       remove("cookieFallback");
-      remove("token");
+      remove("sessionID");
       displayInfoMessage("Logging out now!");
       setTimeout(() => {
          location.pathname = "/index.html";

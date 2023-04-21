@@ -1,6 +1,6 @@
-import { Account } from "appwrite";
 import { initiateClient } from "../initiate-client";
 import save from "../../storage/save";
+import { initiateAccount } from "../initiate-account";
 
 /**
  * This function gets the account data using the JWT token.
@@ -10,7 +10,7 @@ import save from "../../storage/save";
 export async function getAccountData(token) {
    try {
       const client = initiateClient().setJWT(token);
-      const account = new Account(client);
+      const account = initiateAccount(client);
       const activeAccountObj = await account.get();
       save("activeAccountObj", activeAccountObj);
    } catch (e) {

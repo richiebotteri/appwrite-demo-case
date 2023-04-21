@@ -1,8 +1,8 @@
-import { Account } from "appwrite";
 import { initiateClient } from "../initiate-client";
 import { displayErrorMessage } from "../validation/display-error-message";
 import { createJwt } from "./create-jwt";
 import { getAccountData } from "./get-account-data";
+import { initiateAccount } from "../initiate-account";
 import save from "../../storage/save";
 
 /**
@@ -11,8 +11,10 @@ import save from "../../storage/save";
 export async function createLoginSession({ email, password }) {
    try {
       const client = initiateClient();
-      const account = new Account(client);
+      const account = initiateAccount(client);
       const sessionObject = await account.createEmailSession(email, password);
+      const { $id } = sessionObject;
+      save("sessionID", $id);
       const token = await createJwt(account);
       getAccountData(token);
       setTimeout(() => {
