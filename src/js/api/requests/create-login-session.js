@@ -2,6 +2,7 @@ import { Account } from "appwrite";
 import { initiateClient } from "../initiate-client";
 import { displayErrorMessage } from "../validation/display-error-message";
 import { createJwt } from "./create-jwt";
+import { getAccountData } from "./get-account-data";
 import save from "../../storage/save";
 
 /**
@@ -12,11 +13,11 @@ export async function createLoginSession({ email, password }) {
       const client = initiateClient();
       const account = new Account(client);
       const sessionObject = await account.createEmailSession(email, password);
-      save("sessionObject", sessionObject);
-      createJwt(account);
+      const token = await createJwt(account);
+      getAccountData(token);
       setTimeout(() => {
          location.pathname = "/movie-collections.html";
-      }, 1000);
+      }, 1500);
    } catch (error) {
       displayErrorMessage(error);
    }
