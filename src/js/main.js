@@ -3,9 +3,8 @@ import "../scss/styles.scss";
 import * as bootstrap from "bootstrap";
 import { login } from "./auth/login";
 import { register } from "./auth/register";
-import load from "./storage/load";
 import { logout } from "./auth/logout";
-
+import { displayProfileData } from "./ui/profile/display-profile-data";
 const pathname = location.pathname;
 switch (pathname) {
    case "/":
@@ -18,9 +17,9 @@ switch (pathname) {
       break;
    case "/movie-collections.html":
       logout();
-      const isToken = load("token");
-      if (!isToken) {
-         location.pathname = "/index.html";
-      }
+      break;
+   case "/profile.html":
+      displayProfileData();
+      logout();
       break;
 }
