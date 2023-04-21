@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Profile Settings</title>
+   </head>
+   <body>
+      <header class="bg-light">
+         <div class="container">
+            <nav class="navbar navbar-expand-lg">
+               <div class="container-fluid">
+                  <a class="navbar-brand" href="#">Watch This!</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#header-navbar" aria-controls="header-navbar" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="header-navbar">
+                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                           <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                     </ul>
+                     <button class="btn btn-primary mb-2 mb-lg-0 me-lg-2">Add Watchlist</button>
+                     <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Oliver</button>
+                        <ul class="dropdown-menu mt-1">
+                           <li><a class="dropdown-item" href="#" aria-current="page">My Watchlist</a></li>
+                           <li><a class="dropdown-item" href="profile.html" aria-current="page">Profile</a></li>
+                           <button class="dropdown-item logoutEl">Logout</button>
+                        </ul>
+                     </div>
+                  </div>
+               </div>
+            </nav>
+         </div>
+      </header>
+      <main>
+         <div class="container mt-5">
+            <div class="info-msg-el card bg-primary text-light fw-bold text-center p-2 w-50 m-auto mt-4 d-none">
+               <p class="info-msg-text mb-0"></p>
+            </div>
+            <h1 class="mb-4">Profile</h1>
+            <div id="profile-data">
+               <h2 class="mb-3">Account Information</h2>
+            </div>
+         </div>
+      </main>
+   </body>
+   <script type="module" src="./js/main.js"></script>
+</html>
