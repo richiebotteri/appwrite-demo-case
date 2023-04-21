@@ -12,6 +12,7 @@ export function cancelLoginSession() {
       const { $id } = sessionObject;
       const response = account.deleteSession($id);
       remove("sessionObject");
+      remove("cookieFallback");
       remove("token");
       displayInfoMessage("Logging out now!");
       setTimeout(() => {
