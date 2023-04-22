@@ -1,5 +1,5 @@
 import { Client } from "appwrite";
-import { API_VERSION, HOST_URL, PROJECT_ID } from "./env.mjs";
+import { API_VERSION, HOST_URL, PROJECT_ID } from "./constants";
 
 export function initiateClient() {
    const client = new Client();
