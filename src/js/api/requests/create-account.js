@@ -8,7 +8,8 @@ export async function createAccount({ userId, email, password, name }) {
       const client = initiateClient();
       const account = initiateAccount(client);
       const accountObject = await account.create(userId, email, password, name);
-      displaySuccessMessage(accountObject.name);
+      const username = accountObject.name;
+      displaySuccessMessage(`Hey ${username}, welcome to Watchthis! We will redirect your to login`);
       setTimeout(() => {
          location.pathname = "/index.html";
       }, 2000);
