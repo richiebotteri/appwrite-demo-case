@@ -21,11 +21,10 @@
                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
                         </li>
                      </ul>
-                     <button class="btn btn-primary mb-2 mb-lg-0 me-lg-2">Add Watchlist</button>
+                     <button class="btn btn-primary mb-2 mb-lg-0 me-lg-2" data-bs-toggle="modal" data-bs-target="#add-movie">Add Movie</button>
                      <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Profile</button>
                         <ul class="dropdown-menu mt-1">
-                           <li><a class="dropdown-item" href="#" aria-current="page">My Watchlist</a></li>
                            <li><a class="dropdown-item" href="settings.html" aria-current="page">Settings</a></li>
                            <button class="dropdown-item logoutEl">Logout</button>
                         </ul>
@@ -49,6 +48,62 @@
                <div class="card-body">
                   <p class="mb-0">card description</p>
                </div>
+            </div>
+         </div>
+
+         <!-- Modal -->
+         <div class="modal fade" id="add-movie" tabindex="-1" aria-labelledby="add-movie" aria-hidden="true">
+            <div class="modal-dialog">
+               <form id="add-movie-form" class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="add-movie">Add Movie</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="mb-3">
+                        <label for="title" class="form-label fw-semibold">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="write movie title" required />
+                     </div>
+                     <div class="mb-3">
+                        <label for="year" class="form-label fw-semibold">Year</label>
+                        <input type="number" class="form-control" id="year" name="year" placeholder="write movie year" required />
+                     </div>
+                     <div class="mb-2">
+                        <p class="fw-semibold mb-1">Genre</p>
+                        <div class="d-flex">
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genreId" id="horror" value="644258c615aab925e4fa" />
+                              <label class="form-check-label" for="horror">Horror</label>
+                           </div>
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genreId" id="action" value="6443a29c2dcd97a6c6ce" />
+                              <label class="form-check-label" for="action">Action</label>
+                           </div>
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genreId" id="sci-fi" value="6443a2572e48556aef82" />
+                              <label class="form-check-label" for="sci-fi">Sci-fi</label>
+                           </div>
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genreId" id="comedy" value="6443a24a9299b2a9df08" />
+                              <label class="form-check-label" for="comedy">Comedy</label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="mb-2">
+                        <label for="desc" class="form-label fw-semibold">Description</label>
+                        <textarea name="description" class="form-control" id="desc" rows="10" placeholder="Write movie description" required></textarea>
+                     </div>
+                     <div class="mb-2">
+                        <label for="movie-cover" class="form-label fw-semibold">Movie-cover</label>
+                        <input type="text" class="form-control" id="movie-cover" name="movie-cover" placeholder="add movie cover image URL" required />
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="submit" class="btn btn-primary m-auto w-100">Create</button>
+                     <p class="error-msg fs-6 fw-bold text-danger d-none"></p>
+                     <p class="success-msg fs-6 fw-bold text-success d-none"></p>
+                  </div>
+               </form>
             </div>
          </div>
       </main>
