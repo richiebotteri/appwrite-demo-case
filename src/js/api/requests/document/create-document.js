@@ -1,5 +1,5 @@
 import { ID } from "appwrite";
-import { COLLECTION_ID, DATABASE_ID } from "../../constants";
+import { DATABASE_ID } from "../../constants";
 import { initiateClient } from "../../initiate-client";
 import { initiateDatabases } from "../../initiate-databases";
 import { displaySuccessMessage } from "../../validation/display-success-message";
