@@ -1,6 +1,10 @@
 export function displayErrorMessage({ message }) {
-   const errorMessage = message;
-   const errorMsgEl = document.querySelector(".error-msg");
-   errorMsgEl.classList.replace("d-none", "d-block");
-   errorMsgEl.innerText = message;
+   const validationMsgEl = document.querySelector(".validation-msg");
+   validationMsgEl.innerText = message;
+   if (validationMsgEl.classList.contains("text-success")) {
+      validationMsgEl.classList.replace("text-success", "text-danger");
+   } else {
+      validationMsgEl.classList.add("text-danger");
+   }
+   validationMsgEl.classList.replace("d-none", "d-block");
 }
