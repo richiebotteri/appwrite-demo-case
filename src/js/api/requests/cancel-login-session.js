@@ -1,8 +1,8 @@
 import { initiateClient } from "../initiate-client";
-import { displayInfoMessage } from "../validation/display-info-message";
 import remove from "../../storage/remove";
 import load from "../../storage/load";
 import { initiateAccount } from "../initiate-account";
+import { validationMessage } from "../validation/validation-message";
 
 export async function cancelLoginSession() {
    try {
@@ -13,7 +13,7 @@ export async function cancelLoginSession() {
       remove("activeAccountObj");
       remove("cookieFallback");
       remove("sessionID");
-      displayInfoMessage("Logging out now!");
+      const infoMessage = new validationMessage("Logging out", ".info-msg-el").displayInfo();
       setTimeout(() => {
          location.pathname = "/index.html";
       }, 1000);
