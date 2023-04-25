@@ -1,6 +1,6 @@
-export function displayMovieData(movieDataDoc, validationMsgClass) {
+export function displayMovieData(movieDocument) {
    const updateMovieFormEl = document.querySelector("#update-movie-form");
-   const { cover, title, year, genre, description } = movieDataDoc;
+   const { cover, title, year, genre, description } = movieDocument;
 
    updateMovieFormEl.title.value = title;
    updateMovieFormEl.year.valueAsNumber = year;

@@ -9,7 +9,7 @@ import { redirect } from "./api/redirect";
 import { addMovie } from "./collection/add-movie";
 import { listDocuments } from "./api/requests/document/list-document";
 import { deleteMovie } from "./collection/delete-movie";
-import { updateMovieForm } from "./collection/update-movie-form";
+import { updateMovie } from "./collection/update/update-movie";
 
 const pathname = location.pathname;
 switch (pathname) {
@@ -22,12 +22,16 @@ switch (pathname) {
       register();
       break;
    case "/movie-collections.html":
+      // Async delay
+      setTimeout(() => {
+         deleteMovie();
+         updateMovie();
+      }, 1000);
       redirect();
       logout();
       addMovie();
       listDocuments();
-      deleteMovie();
-      updateMovieForm();
+
       break;
    case "/profile.html":
       redirect();
