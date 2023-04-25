@@ -1,7 +1,7 @@
 import { createMovieDocument } from "../api/requests/document/create-document";
 
 /**
- * Gets movie data attributes from "add movie" form by listening. It than converts the submitted data to a form data obj splitting the genreId to be used in the API request to point to the correct database collection.
+ * Gets movie data attributes from "add movie" form by listening. It than converts the submitted data to a form data to be used in the API request.
  */
 export function addMovie() {
    const addMovieFormEl = document.querySelector("#add-movie-form");
@@ -9,8 +9,7 @@ export function addMovie() {
       event.preventDefault();
       const formData = new FormData(event.target);
       const formDataObj = Object.fromEntries(formData);
-      const { genreId, ...apiFormData } = formDataObj;
-      const formDataJson = JSON.stringify(apiFormData);
-      createMovieDocument(formDataJson, genreId);
+      const formDataJson = JSON.stringify(formDataObj);
+      createMovieDocument(formDataJson);
    });
 }
