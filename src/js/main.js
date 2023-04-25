@@ -8,6 +8,7 @@ import { displayProfileData } from "./ui/profile/display-profile-data";
 import { redirect } from "./api/redirect";
 import { addMovie } from "./collection/add-movie";
 import { listDocuments } from "./api/requests/document/list-document";
+import { deleteMovie } from "./collection/delete-movie";
 
 const pathname = location.pathname;
 switch (pathname) {
@@ -24,6 +25,7 @@ switch (pathname) {
       logout();
       addMovie();
       listDocuments();
+      deleteMovie();
       break;
    case "/profile.html":
       redirect();
