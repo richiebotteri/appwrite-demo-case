@@ -1,9 +1,9 @@
-import { initiateClient } from "../initiate-client";
+import { initiateClient } from "../../initiate-client";
 import { createJwt } from "./create-jwt";
-import { getAccountData } from "./get-account-data";
-import { initiateAccount } from "../initiate-account";
-import save from "../../storage/save";
-import { validationMessage } from "../validation/validation-message";
+import { getAccountData } from "../get-account-data";
+import { initiateAccount } from "../../initiate-account";
+import save from "../../../storage/save";
+import { validationMessage } from "../../validation/validation-message";
 
 /**
  * Allow the user to login into their account by providing a valid email and password combination. This route will create a new session for the user.

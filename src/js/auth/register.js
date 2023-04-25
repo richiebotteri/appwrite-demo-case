@@ -1,4 +1,4 @@
-import { createAccount } from "../api/requests/create-account";
+import { createAccount } from "../api/requests/account/create-account";
 import { generateId } from "../utility/generate-id";
 
 export function register() {

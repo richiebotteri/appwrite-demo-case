@@ -1,4 +1,4 @@
-import { createLoginSession } from "../api/requests/create-login-session";
+import { createLoginSession } from "../api/requests/account/create-login-session";
 
 export function login() {
    const loginFormEl = document.querySelector("#login-form");

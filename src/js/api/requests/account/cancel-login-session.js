@@ -1,8 +1,8 @@
-import { initiateClient } from "../initiate-client";
-import remove from "../../storage/remove";
-import load from "../../storage/load";
-import { initiateAccount } from "../initiate-account";
-import { validationMessage } from "../validation/validation-message";
+import { initiateClient } from "../../initiate-client";
+import remove from "../../../storage/remove";
+import load from "../../../storage/load";
+import { initiateAccount } from "../../initiate-account";
+import { validationMessage } from "../../validation/validation-message";
 
 export async function cancelLoginSession() {
    try {

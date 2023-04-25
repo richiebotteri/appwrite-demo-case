@@ -1,4 +1,4 @@
-import { cancelLoginSession } from "../api/requests/cancel-login-session";
+import { cancelLoginSession } from "../api/requests/account/cancel-login-session";
 
 export function logout() {
    const logoutEl = document.querySelector(".logoutEl");

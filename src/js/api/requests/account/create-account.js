@@ -1,6 +1,6 @@
-import { initiateClient } from "../initiate-client";
-import { initiateAccount } from "../initiate-account";
-import { validationMessage } from "../validation/validation-message";
+import { initiateClient } from "../../initiate-client";
+import { initiateAccount } from "../../initiate-account";
+import { validationMessage } from "../../validation/validation-message";
 
 export async function createAccount({ userId, email, password, name }) {
    try {
