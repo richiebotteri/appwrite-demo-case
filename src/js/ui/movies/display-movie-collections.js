@@ -1,5 +1,5 @@
 export function displayMovieCollections(moviesArray) {
-   moviesArray.forEach((movie) => {
+   moviesArray.forEach((movie, index) => {
       const { title, genre, year, description, cover, $id } = movie;
 
       const movieCollectionEl = document.querySelector("#movie-collection");
@@ -17,8 +17,9 @@ export function displayMovieCollections(moviesArray) {
       </div>
 
       <div id="card-settings" class="card-footer bg-light">
-      <button class="btn btn-danger py-1 px-2">delete</button>
-      <button class="btn btn-outline-dark border py-1 px-2">update</button>
+      <button class="delete-btn btn btn-danger py-1 px-2">delete</button>
+      <button class="update-btn btn btn-outline-dark border py-1 px-2">update</button>
+      <p class="validation-msg-${index} fs-6 fw-bold text-danger pt-2 m-0"></p>
       </div>
       
       <img id="cover" src="${cover}" class="card-body movie-cover"/>
