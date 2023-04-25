@@ -16,10 +16,19 @@ export function displayMovieCollections(moviesArray) {
       <p>Year: ${year} | ${genre}</p>
       </div>
 
-      <div class="card-footer">
+      <div id="card-settings" class="card-footer bg-light">
+      <button class="btn btn-danger py-1 px-2">delete</button>
+      <button class="btn btn-outline-dark border py-1 px-2">update</button>
+      </div>
+      
+      <img id="cover" src="${cover}" class="card-body movie-cover"/>
+      
+      <div id="card-desc" class="card-body">
       <h3>Description</h3>
       <p>${description}</p>
       </div>
+
+
 
       `,
          "text/html"
@@ -27,14 +36,15 @@ export function displayMovieCollections(moviesArray) {
 
       const cardHeader = parserDoc.querySelector(".card-header");
 
-      const cardBody = document.createElement("img");
-      cardBody.classList.add("card-body", "movie-cover");
-      cardBody.src = `${cover}`;
+      const cardSettings = parserDoc.querySelector("#card-settings");
+
+      const cardImage = parserDoc.querySelector("#cover");
+      const cardBody = parserDoc.querySelector("#card-desc");
 
       const cardFooter = parserDoc.querySelector(".card-footer");
 
       movieCollectionEl.append(card);
 
-      card.append(cardHeader, cardBody, cardFooter);
+      card.append(cardHeader, cardImage, cardBody, cardFooter, cardSettings);
    });
 }
