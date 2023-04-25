@@ -5,6 +5,7 @@ import { createMovieDocument } from "../api/requests/document/create-document";
  */
 export function addMovie() {
    const addMovieFormEl = document.querySelector("#add-movie-form");
+   addMovieFormEl.reset();
    addMovieFormEl.addEventListener("submit", (event) => {
       event.preventDefault();
       const formData = new FormData(event.target);
