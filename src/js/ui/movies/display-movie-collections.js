@@ -18,7 +18,7 @@ export function displayMovieCollections(moviesArray) {
 
       <div id="card-settings" class="card-footer bg-light">
       <button class="delete-btn btn btn-danger py-1 px-2">delete</button>
-      <button class="update-btn btn btn-outline-dark border py-1 px-2">update</button>
+      <button class="update-btn btn btn-outline-dark border py-1 px-2" data-bs-toggle="modal" data-bs-target="#update-movie">update</button>
       <p class="validation-msg-${index} fs-6 fw-bold text-danger pt-2 m-0"></p>
       </div>
       

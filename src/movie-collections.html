@@ -38,7 +38,7 @@
             <div id="movie-collection" class="d-flex flex-wrap gap-4"></div>
          </div>
 
-         <!-- Modal -->
+         <!-- Add Movie Modal -->
          <div class="modal fade" id="add-movie" tabindex="-1" aria-labelledby="add-movie" aria-hidden="true">
             <div class="modal-dialog">
                <form id="add-movie-form" class="modal-content">
@@ -88,6 +88,61 @@
                   <div class="modal-footer">
                      <button type="submit" class="btn btn-primary m-auto w-100">Create</button>
                      <p class="validation-msg fs-6 fw-bold text-danger d-none"></p>
+                  </div>
+               </form>
+            </div>
+         </div>
+
+         <!-- Update Movie Modal -->
+         <div class="modal fade" id="update-movie" tabindex="-1" aria-labelledby="update-movie" aria-hidden="true">
+            <div class="modal-dialog">
+               <form id="update-movie-form" class="modal-content">
+                  <div class="modal-header">
+                     <h5 class="modal-title" id="update-movie">update Movie</h5>
+                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                     <div class="mb-3">
+                        <label for="title" class="form-label fw-semibold">Title</label>
+                        <input type="text" class="form-control" id="title" name="title" placeholder="write movie title" required />
+                     </div>
+                     <div class="mb-3">
+                        <label for="year" class="form-label fw-semibold">Year</label>
+                        <input type="number" class="form-control" id="year" name="year" placeholder="write movie year" required />
+                     </div>
+                     <div class="mb-2">
+                        <p class="fw-semibold mb-1">Genre</p>
+                        <div class="d-flex">
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genre" id="Horror" value="Horror" />
+                              <label class="form-check-label" for="Horror">Horror</label>
+                           </div>
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genre" id="Action" value="Action" />
+                              <label class="form-check-label" for="Action">Action</label>
+                           </div>
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genre" id="Sci-fi" value="Sci-fi" />
+                              <label class="form-check-label" for="Sci-fi">Sci-fi</label>
+                           </div>
+                           <div class="form-check me-2">
+                              <input class="form-check-input" type="radio" name="genre" id="Comedy" value="Comedy" />
+                              <label class="form-check-label" for="Comedy">Comedy</label>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="mb-2">
+                        <label for="desc" class="form-label fw-semibold">Description</label>
+                        <textarea name="description" class="form-control" id="desc" rows="10" placeholder="Write movie description" required></textarea>
+                     </div>
+                     <div class="mb-2">
+                        <label for="cover" class="form-label fw-semibold">cover</label>
+                        <input type="text" class="form-control" id="cover" name="cover" placeholder="update movie cover image URL" required />
+                     </div>
+                  </div>
+                  <div class="modal-footer">
+                     <button type="submit" class="btn btn-primary m-auto w-100">Create</button>
+                     <p class="update-msg fs-6 fw-bold text-danger d-none"></p>
                   </div>
                </form>
             </div>
