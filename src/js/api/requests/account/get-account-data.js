@@ -1,6 +1,6 @@
-import { initiateClient } from "../initiate-client";
-import save from "../../storage/save";
-import { initiateAccount } from "../initiate-account";
+import save from "../../../storage/save";
+import { initiateAccount } from "../../initiate-account";
+import { initiateClient } from "../../initiate-client";
 
 /**
  * This function gets the account data using the JWT token.
