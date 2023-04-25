@@ -39,16 +39,8 @@
             <div class="info-msg-el card bg-primary text-light fw-bold text-center p-2 w-50 m-auto mt-4 d-none">
                <p class="info-msg-text mb-0"></p>
             </div>
-            <h1 class="mb-4">All Watch lists</h1>
-            <div class="card">
-               <div class="card-header pt-4">
-                  <h2>Collection Title</h2>
-                  <p>Made by: James Lennord</p>
-               </div>
-               <div class="card-body">
-                  <p class="mb-0">card description</p>
-               </div>
-            </div>
+            <h1 class="mb-5">Movie Collections</h1>
+            <div id="movie-collection" class="d-flex flex-wrap gap-4"></div>
          </div>
 
          <!-- Modal -->
@@ -72,20 +64,20 @@
                         <p class="fw-semibold mb-1">Genre</p>
                         <div class="d-flex">
                            <div class="form-check me-2">
-                              <input class="form-check-input" type="radio" name="genreId" id="horror" value="644258c615aab925e4fa" />
-                              <label class="form-check-label" for="horror">Horror</label>
+                              <input class="form-check-input" type="radio" name="genre" id="Horror" value="Horror" />
+                              <label class="form-check-label" for="Horror">Horror</label>
                            </div>
                            <div class="form-check me-2">
-                              <input class="form-check-input" type="radio" name="genreId" id="action" value="6443a29c2dcd97a6c6ce" />
-                              <label class="form-check-label" for="action">Action</label>
+                              <input class="form-check-input" type="radio" name="genre" id="Action" value="Action" />
+                              <label class="form-check-label" for="Action">Action</label>
                            </div>
                            <div class="form-check me-2">
-                              <input class="form-check-input" type="radio" name="genreId" id="sci-fi" value="6443a2572e48556aef82" />
-                              <label class="form-check-label" for="sci-fi">Sci-fi</label>
+                              <input class="form-check-input" type="radio" name="genre" id="Sci-fi" value="Sci-fi" />
+                              <label class="form-check-label" for="Sci-fi">Sci-fi</label>
                            </div>
                            <div class="form-check me-2">
-                              <input class="form-check-input" type="radio" name="genreId" id="comedy" value="6443a24a9299b2a9df08" />
-                              <label class="form-check-label" for="comedy">Comedy</label>
+                              <input class="form-check-input" type="radio" name="genre" id="Comedy" value="Comedy" />
+                              <label class="form-check-label" for="Comedy">Comedy</label>
                            </div>
                         </div>
                      </div>
@@ -94,8 +86,8 @@
                         <textarea name="description" class="form-control" id="desc" rows="10" placeholder="Write movie description" required></textarea>
                      </div>
                      <div class="mb-2">
-                        <label for="movie-cover" class="form-label fw-semibold">Movie-cover</label>
-                        <input type="text" class="form-control" id="movie-cover" name="movie-cover" placeholder="add movie cover image URL" required />
+                        <label for="cover" class="form-label fw-semibold">cover</label>
+                        <input type="text" class="form-control" id="cover" name="cover" placeholder="add movie cover image URL" required />
                      </div>
                   </div>
                   <div class="modal-footer">

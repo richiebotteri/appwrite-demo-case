@@ -1,2 +1,11 @@
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
+
+.card {
+   width: 300px;
+}
+
+.movie-cover {
+   height: 200px;
+   object-fit: cover;
+}
