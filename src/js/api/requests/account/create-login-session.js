@@ -1,5 +1,3 @@
-import { createJwt } from "./create-jwt";
-
 import save from "../../../storage/save";
 import { validationMessage } from "../../validation/validation-message";
 import { getAccountData } from "./get-account-data";
@@ -17,8 +15,7 @@ export async function createLoginSession({ email, password }) {
       const sessionObject = await account.createEmailSession(email, password);
       const { $id } = sessionObject;
       save("sessionID", $id);
-      const token = await createJwt(account);
-      getAccountData(token);
+      getAccountData();
       const successMsg = new validationMessage("Success! Logging in now.", ".validation-msg").displaySuccess();
       setTimeout(() => {
          location.pathname = "/movie-collections.html";
