@@ -1,10 +1,11 @@
 import load from "../../storage/load";
+import { changeDateFormat } from "../../utility/change-date-format";
 import { emailVerificationStatus } from "./email-verification-status";
 
 export function displayProfileData() {
    const profileDataEl = document.querySelector("#profile-data");
    const profileData = load("activeAccountObj");
-   const { $id, email, $createdAt, name, registration } = profileData;
+   const { $id, email, name, registration } = profileData;
 
    const idEl = document.createElement("p");
    idEl.innerText = `User ID: ${$id}`;
@@ -19,14 +20,12 @@ export function displayProfileData() {
    );
    const emailEl = htmlDocument.querySelector("p");
 
-   const createdAtEl = document.createElement("p");
-   createdAtEl.innerText = `Created: ${$createdAt}`;
-
    const nameEl = document.createElement("p");
    nameEl.innerText = `Name: ${name}`;
 
    const registrationEl = document.createElement("p");
-   registrationEl.innerText = `Registered: ${registration}`;
+   const registrationDate = changeDateFormat(registration);
+   registrationEl.innerText = `Registered: ${registrationDate}`;
 
-   profileDataEl.append(idEl, nameEl, emailEl, createdAtEl, registrationEl);
+   profileDataEl.append(idEl, nameEl, emailEl, registrationEl);
 }
