@@ -4,12 +4,12 @@ import * as bootstrap from "bootstrap";
 import { login } from "./auth/login";
 import { register } from "./auth/register";
 import { logout } from "./auth/logout";
-import { displayProfileData } from "./ui/profile/display-profile-data";
 import { redirect } from "./api/redirect";
 import { addMovie } from "./collection/add-movie";
 import { listDocuments } from "./api/requests/document/list-document";
 import { deleteMovie } from "./collection/delete-movie";
 import { updateMovie } from "./collection/update/update-movie";
+import { getAccountData } from "./api/requests/account/get-account-data";
 
 const pathname = location.pathname;
 switch (pathname) {
@@ -31,11 +31,10 @@ switch (pathname) {
       logout();
       addMovie();
       listDocuments();
-
       break;
    case "/profile.html":
       redirect();
-      displayProfileData();
+      getAccountData();
       logout();
       break;
 }

@@ -1,4 +1,4 @@
-import save from "../../../storage/save";
+import { displayProfileData } from "../../../ui/profile/display-profile-data";
 import { initiateAccount } from "../../initiate-account";
 import { initiateClient } from "../../initiate-client";
 
@@ -11,7 +11,7 @@ export async function getAccountData() {
       const client = initiateClient();
       const account = initiateAccount(client);
       const activeAccountObj = await account.get();
-      save("activeAccountObj", activeAccountObj);
+      displayProfileData(activeAccountObj);
    } catch (e) {
       console.log(e);
    }

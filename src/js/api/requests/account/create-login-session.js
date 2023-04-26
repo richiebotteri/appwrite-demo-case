@@ -15,7 +15,6 @@ export async function createLoginSession({ email, password }) {
       const sessionObject = await account.createEmailSession(email, password);
       const { $id } = sessionObject;
       save("sessionID", $id);
-      getAccountData();
       const successMsg = new validationMessage("Success! Logging in now.", ".validation-msg").displaySuccess();
       setTimeout(() => {
          location.pathname = "/movie-collections.html";
