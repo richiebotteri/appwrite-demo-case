@@ -1,16 +1,20 @@
-import load from "../../storage/load";
 import { changeDateFormat } from "../../utility/change-date-format";
 import { emailVerificationStatus } from "./email-verification-status";
 
-export function displayProfileData() {
+/**
+ * displays the api profile data of the currently logged in user
+ * @param {object} profileData
+ */
+export function displayProfileData(profileData) {
    const profileDataEl = document.querySelector("#profile-data");
-   const profileData = load("activeAccountObj");
    const { $id, email, name, registration } = profileData;
 
+   // ID
    const idEl = document.createElement("p");
    idEl.innerText = `User ID: ${$id}`;
 
-   const emailVerStatus = emailVerificationStatus();
+   // Email
+   const emailVerStatus = emailVerificationStatus(profileData);
    const parseDocument = new DOMParser();
    const htmlDocument = parseDocument.parseFromString(
       `
@@ -20,12 +24,15 @@ export function displayProfileData() {
    );
    const emailEl = htmlDocument.querySelector("p");
 
+   // Name
    const nameEl = document.createElement("p");
    nameEl.innerText = `Name: ${name}`;
 
+   // Registration Date
    const registrationEl = document.createElement("p");
    const registrationDate = changeDateFormat(registration);
    registrationEl.innerText = `Registered: ${registrationDate}`;
 
+   // Add child elements to parent container
    profileDataEl.append(idEl, nameEl, emailEl, registrationEl);
 }

@@ -1,7 +1,7 @@
 import { deleteMovieDocument } from "../api/requests/document/delete-document";
 
 /**
- * Gets movie data attributes from "add movie" form by listening. It than converts the submitted data to a form data to be used in the API request.
+ * listens for a delete button click, and calls api function to delete movie document.
  */
 export function deleteMovie() {
    const deleteMovieBtnEl = document.querySelectorAll(".delete-btn");

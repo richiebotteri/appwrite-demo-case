@@ -1,13 +1,19 @@
+/**
+ * displays the movie collection in HTML
+ * @param {object} moviesArray
+ */
 export function displayMovieCollections(moviesArray) {
    moviesArray.forEach((movie, index) => {
       const { title, genre, year, description, cover, $id } = movie;
 
       const movieCollectionEl = document.querySelector("#movie-collection");
 
+      // Card
       const card = document.createElement("div");
       card.classList.add("card");
       card.id = $id;
 
+      // Card button container, image tag and description container
       const parser = new DOMParser();
       const parserDoc = parser.parseFromString(
          `
@@ -17,16 +23,16 @@ export function displayMovieCollections(moviesArray) {
       </div>
 
       <div id="card-settings" class="card-footer bg-light">
-      <button class="delete-btn btn btn-danger py-1 px-2">delete</button>
-      <button class="update-btn btn btn-outline-dark border py-1 px-2" data-bs-toggle="modal" data-bs-target="#update-movie">update</button>
-      <p class="validation-msg-${index} fs-6 fw-bold text-danger pt-2 m-0"></p>
+         <button class="delete-btn btn btn-danger py-1 px-2">delete</button>
+         <button class="update-btn btn btn-outline-dark border py-1 px-2" data-bs-toggle="modal" data-bs-target="#update-movie">update</button>
+         <p class="validation-msg-${index} fs-6 fw-bold text-danger pt-2 m-0"></p>
       </div>
       
       <img id="cover" src="${cover}" class="card-body movie-cover"/>
       
       <div id="card-desc" class="card-body">
-      <h3>Description</h3>
-      <p>${description}</p>
+         <h3>Description</h3>
+         <p>${description}</p>
       </div>
 
 
