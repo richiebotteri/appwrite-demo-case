@@ -4,7 +4,8 @@ Appwrite is a self-hosted open-source BaaS platform that provides developers wit
 
 ## What you will learn in this project
 
-1. How to setup and self-host an Appwrite backend server on your machine.
-2. How to setup Appwrite on your cloned github repo on your machine.
-3. How to make api auth requests to register, login, logout a user.
-4. How to Create, read, update and delete movie documents.
+You will learn how to make api requests to ...
+
+1. ... Register, login and logout a user.
+2. ... Get active user account data.
+3. ... Create, read, update and delete movie collections.
