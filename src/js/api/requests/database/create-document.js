@@ -16,9 +16,9 @@ export async function createMovieDocument(formData) {
 
       const successMsg = new validationMessage("Movie has been added!", ".validation-msg").displaySuccess();
 
-      // setTimeout(() => {
-      //    location.reload();
-      // }, 1000);
+      setTimeout(() => {
+         location.reload();
+      }, 1000);
    } catch (error) {
       const successMsg = new validationMessage(error, ".validation-msg").displayError();
    }

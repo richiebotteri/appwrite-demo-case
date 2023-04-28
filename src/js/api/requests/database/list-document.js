@@ -10,6 +10,7 @@ export async function listDocuments() {
       const databases = initiateDatabases(client);
 
       const response = await databases.listDocuments(DATABASE_ID, COLLECTION_ID);
+
       const { documents } = response;
       displayMovieCollections(documents);
    } catch (error) {
