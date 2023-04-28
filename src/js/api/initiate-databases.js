@@ -1,6 +1,6 @@
 import { Databases } from "appwrite";
 
-export function initiateDatabases() {
-   const databases = new Databases();
+export function initiateDatabases(client) {
+   const databases = new Databases(client);
    return databases;
 }

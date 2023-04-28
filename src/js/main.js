@@ -1,20 +1,19 @@
 // Imports custom CSS
 import "../scss/styles.scss";
 import * as bootstrap from "bootstrap";
-import { redirect } from "./api/redirect";
+import { login } from "./auth/login";
 
 const pathname = location.pathname;
 switch (pathname) {
    case "/":
       location.pathname = "/index.html";
    case "/index.html":
+      login();
       break;
    case "/register.html":
       break;
    case "/movie-collections.html":
-      redirect();
       break;
    case "/profile.html":
-      redirect();
       break;
 }
