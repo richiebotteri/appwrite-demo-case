@@ -7,6 +7,7 @@ import { logout } from "./auth/logout";
 import { getAccountData } from "./api/requests/account/get-account-data";
 import { addMovie } from "./movie-collection/add-movie";
 import { listDocuments } from "./api/requests/database/list-document";
+import { deleteMovie } from "./movie-collection/delete-movie";
 
 const pathname = location.pathname;
 switch (pathname) {
@@ -21,6 +22,9 @@ switch (pathname) {
    case "/movie-collections.html":
       addMovie();
       listDocuments();
+      setTimeout(() => {
+         deleteMovie();
+      }, 1000);
       logout();
       break;
    case "/profile.html":
