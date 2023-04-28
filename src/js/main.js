@@ -4,6 +4,7 @@ import * as bootstrap from "bootstrap";
 import { register } from "./auth/register";
 import { login } from "./auth/login";
 import { logout } from "./auth/logout";
+import { getAccountData } from "./api/requests/account/get-account-data";
 
 const pathname = location.pathname;
 switch (pathname) {
@@ -20,5 +21,6 @@ switch (pathname) {
       break;
    case "/profile.html":
       logout();
+      getAccountData();
       break;
 }
