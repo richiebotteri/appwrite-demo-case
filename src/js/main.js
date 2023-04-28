@@ -3,6 +3,7 @@ import "../scss/styles.scss";
 import * as bootstrap from "bootstrap";
 import { register } from "./auth/register";
 import { login } from "./auth/login";
+import { logout } from "./auth/logout";
 
 const pathname = location.pathname;
 switch (pathname) {
@@ -15,7 +16,9 @@ switch (pathname) {
       register();
       break;
    case "/movie-collections.html":
+      logout();
       break;
    case "/profile.html":
+      logout();
       break;
 }

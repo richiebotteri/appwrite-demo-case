@@ -1,3 +1,4 @@
+import save from "../../../../../../../../Downloads/watchthis-appwrite-demo-main/watchthis-appwrite-demo-main/src/js/storage/save";
 import { initiateAccount } from "../../initiate-account";
 import { initiateClient } from "../../initiate-client";
 import { validationMessage } from "../../validation";
@@ -13,11 +14,16 @@ export async function createLoginSession({ email, password }) {
 
       const sessionObject = await account.createEmailSession(email, password);
 
+      console.log(sessionObject);
+
+      const { $id } = sessionObject;
+      save("sessionID", $id);
+
       const successMsg = new validationMessage("Success! Logging in now.", ".validation-msg").displaySuccess();
 
-      setTimeout(() => {
-         location.pathname = "/movie-collections.html";
-      }, 1500);
+      // setTimeout(() => {
+      //    location.pathname = "/movie-collections.html";
+      // }, 1500);
    } catch (error) {
       const errorMsg = new validationMessage(error, ".validation-msg").displayError();
    }
