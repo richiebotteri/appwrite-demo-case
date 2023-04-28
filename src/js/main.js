@@ -5,6 +5,7 @@ import { register } from "./auth/register";
 import { login } from "./auth/login";
 import { logout } from "./auth/logout";
 import { getAccountData } from "./api/requests/account/get-account-data";
+import { addMovie } from "./movie-collection/add-movie";
 
 const pathname = location.pathname;
 switch (pathname) {
@@ -17,6 +18,7 @@ switch (pathname) {
       register();
       break;
    case "/movie-collections.html":
+      addMovie();
       logout();
       break;
    case "/profile.html":
