@@ -13,9 +13,9 @@ export async function deleteMovieDocument(movieID, cardValidationClass) {
       console.log(response);
       const successMsg = new validationMessage("Movie has been deleted!", cardValidationClass).displaySuccess();
 
-      // setTimeout(() => {
-      //    location.reload();
-      // }, 1500);
+      setTimeout(() => {
+         location.reload();
+      }, 1500);
    } catch (error) {
       const errorMsg = new validationMessage(error, cardValidationClass).displayError();
    }
